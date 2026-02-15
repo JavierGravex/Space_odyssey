@@ -43,11 +43,77 @@ public class Movement : MonoBehaviour
     public float deceleration = 1f;    // How fast you slow down when letting go
     public float rotationSpeed = 50f; // How fast you turn
 
+    [Header("Orbit")]
+    public bool isOrbiting;
+    private Transform orbitCenter;
+    private float orbitRadius;
+    private float orbitAngleDeg;
+    private float orbitAngularSpeedDeg;
+
     // Private variable to track current momentum
     private float currentSpeed = 0f;
 
+    public void EnterOrbit(Transform center, float angularSpeedDeg, float minRadius)
+    {
+        if (center == null) return;
+
+        orbitCenter = center;
+        orbitAngularSpeedDeg = angularSpeedDeg;
+
+        Vector2 fromCenter = (Vector2)transform.position - (Vector2)orbitCenter.position;
+        orbitRadius = Mathf.Max(fromCenter.magnitude, minRadius);
+
+        orbitAngleDeg = Mathf.Atan2(fromCenter.y, fromCenter.x) * Mathf.Rad2Deg;
+        isOrbiting = true;
+    }
+
+    public void ExitOrbit(bool launchAtMaxSpeed)
+    {
+        if (!isOrbiting) return;
+
+        Vector2 radial = ((Vector2)transform.position - (Vector2)orbitCenter.position).normalized;
+        Vector2 tangent = orbitAngularSpeedDeg >= 0f
+            ? new Vector2(-radial.y, radial.x)
+            : new Vector2(radial.y, -radial.x);
+
+        transform.up = tangent;
+
+        if (launchAtMaxSpeed)
+        {
+            currentSpeed = maxSpeed;
+        }
+
+        isOrbiting = false;
+        orbitCenter = null;
+    }
+
+
+
     void Update()
     {
+        //If it's orbiting then follow this instead
+        if (isOrbiting && orbitCenter != null)
+        {
+            orbitAngleDeg += orbitAngularSpeedDeg * Time.deltaTime;
+
+            float rad = orbitAngleDeg * Mathf.Deg2Rad;
+            Vector2 radial = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+            Vector2 center = orbitCenter.position;
+            Vector2 p = center + radial * orbitRadius;
+            transform.position = p;
+
+            Vector2 tangent = orbitAngularSpeedDeg >= 0.01f
+                ? new Vector2(-radial.y, radial.x)   
+                : new Vector2(radial.y, -radial.x);  
+                
+            transform.up = tangent;
+            if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.01f || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.01f)
+            {
+                ExitOrbit(true);
+            }
+
+            return;
+        }
         // Turning Left/Right
         float turnInput = Input.GetAxis("Horizontal");
         if (turnInput != 0 && currentFuel > 0)

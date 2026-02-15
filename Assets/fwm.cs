@@ -1,28 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBounds : MonoBehaviour
 {
-    private Vector2 screenBounds;
+    private Camera cam;
     private float objectWidth;
 
     void Start()
     {
-        // Use the camera as the boundary
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-
-        // Half the width of the ship (So half the ship isn't off screen)
-        objectWidth = transform.GetComponent<SpriteRenderer>().bounds.extents.x;
+        cam = Camera.main;
+        objectWidth = GetComponent<SpriteRenderer>().bounds.extents.x;
     }
 
     void LateUpdate()
     {
-        // Where the Ship is
-        Vector3 viewPos = transform.position;
-        viewPos.x = Mathf.Clamp(viewPos.x, (screenBounds.x * -1) + objectWidth, screenBounds.x - objectWidth);
+        if (cam == null) return;
 
-        // New Position
-        transform.position = viewPos;
+        float halfCamWidth = cam.orthographicSize * cam.aspect;
+
+        float minX = cam.transform.position.x - halfCamWidth + objectWidth;
+        float maxX = cam.transform.position.x + halfCamWidth - objectWidth;
+
+        Vector3 pos = transform.position;
+        pos.x = Mathf.Clamp(pos.x, minX, maxX);
+        transform.position = pos;
     }
 }
