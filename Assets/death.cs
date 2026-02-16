@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 
 public class Death : MonoBehaviour
 {
@@ -7,17 +6,37 @@ public class Death : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("enemy1"))
+        // 1. Logic for if THIS object is the Player
+        if (gameObject.CompareTag("Player")) 
         {
-            Die();
+            if (collision.gameObject.CompareTag("enemy1") || collision.gameObject.CompareTag("enemy2"))
+            {
+                PlayerDie();
+            }
+        }
+
+        // 2. Logic for if THIS object is the Enemy
+        if (gameObject.CompareTag("enemy2"))
+        {
+            // If enemy hits an obstacle, it just disappears without stopping time
+            if (collision.gameObject.CompareTag("enemy1"))
+            {
+                EnemyDie();
+            }
         }
     }
 
-    void Die()
+    void PlayerDie()
     {
-        deathText.SetActive(true);
-        Destroy(gameObject);
-        Time.timeScale = 0f;
+        if (deathText != null) deathText.SetActive(true);
+        Time.timeScale = 0f; // STOP the game only for the player
+        gameObject.SetActive(false); 
+    }
 
+    void EnemyDie()
+    {
+        // Do NOT stop time here. Just remove the enemy.
+        Debug.Log("Enemy crashed into an obstacle!");
+        Destroy(gameObject); 
     }
 }

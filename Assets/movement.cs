@@ -28,10 +28,12 @@
 // }
 
 using UnityEngine;
+using UnityEngine.UI; // to detect slider
 
 public class Movement : MonoBehaviour
 {
     [Header("Fuel Settings")]
+    public Slider fuelSlider; // slider
     public float maxFuel = 100f; // Total Fuel
     public float currentFuel = 100f; // Current Fuel (Updated)
     public float fuelBurnRate = 3f; // Fuel burn rate when moving forward or back
@@ -91,6 +93,11 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        // Update the UI bar every frame to match our fuel
+        if (fuelSlider != null)
+        {
+            fuelSlider.value = currentFuel;
+        }
         //If it's orbiting then follow this instead
         if (isOrbiting && orbitCenter != null)
         {
@@ -146,5 +153,11 @@ public class Movement : MonoBehaviour
 
         // Apply the Movement
         transform.Translate(Vector3.up * currentSpeed * Time.deltaTime);
+    }
+    public void AddFuel(float amount)
+    {
+        currentFuel += amount;
+        currentFuel = Mathf.Clamp(currentFuel, 0, maxFuel);
+        Debug.Log("Fuel Added! Current Fuel: " + currentFuel);
     }
 }
