@@ -6,6 +6,16 @@ public sealed class EnemyFollow : MonoBehaviour
     public float moveSpeed = 5f;
     public float rotationSpeed = 200f;
 
+void Start()
+    {
+        // This searches the scene for the object tagged "Player"
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        
+        if (playerObj != null)
+        {
+            player = playerObj.transform;
+        }
+    }
     void Update()
     {
         if (player == null) return;
