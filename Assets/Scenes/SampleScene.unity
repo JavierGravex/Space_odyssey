@@ -2713,6 +2713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42065748b7c77f64ba24d095021919cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  fuelSlider: {fileID: 0}
   maxFuel: 100
   currentFuel: 100
   fuelBurnRate: 3
