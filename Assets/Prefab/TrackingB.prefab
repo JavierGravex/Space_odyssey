@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2693331501347847579, guid: 09ff3b54cec1b9a4f9d9030a799f7190, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4093944025284040376, guid: 37ca1b2e8c2e32f418908560af5f49ca, type: 3}
+    - target: {fileID: 3674716100983520838, guid: 09ff3b54cec1b9a4f9d9030a799f7190, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674716100983520838, guid: 09ff3b54cec1b9a4f9d9030a799f7190, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3792552281701721559, guid: 09ff3b54cec1b9a4f9d9030a799f7190, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.03
@@ -52,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrackingB
       objectReference: {fileID: 0}
+    - target: {fileID: 8421999387284314991, guid: 09ff3b54cec1b9a4f9d9030a799f7190, type: 3}
+      propertyPath: m_TagString
+      value: enemy2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -59,6 +75,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8421999387284314991, guid: 09ff3b54cec1b9a4f9d9030a799f7190, type: 3}
       insertIndex: -1
       addedObject: {fileID: -7637341464567814844}
+    - targetCorrespondingSourceObject: {fileID: 8421999387284314991, guid: 09ff3b54cec1b9a4f9d9030a799f7190, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8999470768275124310}
   m_SourcePrefab: {fileID: 100100000, guid: 09ff3b54cec1b9a4f9d9030a799f7190, type: 3}
 --- !u!1 &4111244323287197870 stripped
 GameObject:
@@ -80,3 +99,16 @@ MonoBehaviour:
   player: {fileID: 0}
   moveSpeed: 2
   rotationSpeed: 200
+--- !u!114 &8999470768275124310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111244323287197870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e79dffb60729c48aa817efe797d9a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Death
+  deathText: {fileID: 0}
