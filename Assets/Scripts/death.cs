@@ -9,7 +9,7 @@ public class Death : MonoBehaviour
         // 1. Logic for if THIS object is the Player
         if (gameObject.CompareTag("Player")) 
         {
-            if (collision.gameObject.CompareTag("enemy1") || collision.gameObject.CompareTag("enemy2"))
+            if (collision.gameObject.CompareTag("enemy1") || collision.gameObject.CompareTag("enemy2") || collision.gameObject.CompareTag("asteroid") )
             {
                 PlayerDie();
             }
@@ -19,11 +19,12 @@ public class Death : MonoBehaviour
         if (gameObject.CompareTag("enemy2"))
         {
             // If enemy hits an obstacle, it just disappears without stopping time
-            if (collision.gameObject.CompareTag("enemy1"))
+            if (collision.gameObject.CompareTag("enemy1") || collision.gameObject.CompareTag("asteroid"))
             {
                 EnemyDie();
             }
         }
+    
     }
 
     void PlayerDie()
