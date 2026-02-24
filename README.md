@@ -1,3 +1,8 @@
+Team Members:
+- Yosselin Meza
+- Juan Payes
+- Bryan Alaniz
+- Javier Arias
 
 # Game 01 First Iteration
 Short video: 
