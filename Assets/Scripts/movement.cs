@@ -1,34 +1,5 @@
-// using UnityEngine;
-
-// public class PlayerMovement : MonoBehaviour
-// {
-//     public float moveSpeed = 5f;
-//     private Vector2 movement;
-//     private Rigidbody2D rb;
-
-//     void Start()
-//     {
-//         // Get the Rigidbody2D component attached to the player
-//         rb = GetComponent<Rigidbody2D>();
-//     }
-
-//     void Update()
-//     {
-//         // Get input (WASD or Arrow keys)
-//         // Returns a value between -1 and 1
-//         movement.x = Input.GetAxisRaw("Horizontal");
-//         movement.y = Input.GetAxisRaw("Vertical");
-//     }
-
-//     void FixedUpdate()
-//     {
-//         // Move the player based on the input and speed
-//         rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
-//     }
-// }
-
 using UnityEngine;
-using UnityEngine.UI; // to detect slider
+using UnityEngine.UI; 
 
 public class Movement : MonoBehaviour
 {
@@ -54,7 +25,7 @@ public class Movement : MonoBehaviour
 
     // Private variable to track current momentum
     private float currentSpeed = 0f;
-
+    public FuelUIController fuelUI;
     public void EnterOrbit(Transform center, float angularSpeedDeg, float minRadius)
     {
         if (center == null) return;
@@ -97,6 +68,7 @@ public class Movement : MonoBehaviour
         if (fuelSlider != null)
         {
             fuelSlider.value = currentFuel;
+            fuelUI.UpdateFuelDisplay(currentFuel,maxFuel);
         }
         //If it's orbiting then follow this instead
         if (isOrbiting && orbitCenter != null)
