@@ -52,8 +52,8 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: planet1_rotation
-  m_Speed: 0.2
-  m_CycleOffset: 1
+  m_Speed: 0.004
+  m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
