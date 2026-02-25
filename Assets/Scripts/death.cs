@@ -7,6 +7,11 @@ public class Death : MonoBehaviour
     [Header("UI Reference")]
     public LivesUI livesManager; // NEW: The connection to your UI script
 
+    private void Start()
+    {
+        Time.timeScale = 1f; // Ensure the game is running when the scene starts or restarts
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // 1. Logic for if THIS object is the Player
