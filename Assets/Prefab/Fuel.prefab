@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1001876180875910395}
   - component: {fileID: 5812660574813708362}
   m_Layer: 0
-  m_Name: mine_1_08_0
+  m_Name: Fuel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

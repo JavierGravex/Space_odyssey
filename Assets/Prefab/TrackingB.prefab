@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792552281701721559, guid: 09ff3b54cec1b9a4f9d9030a799f7190, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.03
+      value: 0.844
       objectReference: {fileID: 0}
     - target: {fileID: 3792552281701721559, guid: 09ff3b54cec1b9a4f9d9030a799f7190, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.73
+      value: -6.894
       objectReference: {fileID: 0}
     - target: {fileID: 3792552281701721559, guid: 09ff3b54cec1b9a4f9d9030a799f7190, type: 3}
       propertyPath: m_LocalPosition.z
@@ -68,10 +68,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: enemy2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6451309470131238562, guid: 09ff3b54cec1b9a4f9d9030a799f7190, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8421999387284314991, guid: 09ff3b54cec1b9a4f9d9030a799f7190, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7228728717201970295}
     - targetCorrespondingSourceObject: {fileID: 8421999387284314991, guid: 09ff3b54cec1b9a4f9d9030a799f7190, type: 3}
       insertIndex: -1
       addedObject: {fileID: -7637341464567814844}
@@ -84,6 +88,159 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8421999387284314991, guid: 09ff3b54cec1b9a4f9d9030a799f7190, type: 3}
   m_PrefabInstance: {fileID: 5615673434064057281}
   m_PrefabAsset: {fileID: 0}
+--- !u!60 &7228728717201970295
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111244323287197870}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.58, y: 0.48}
+    newSize: {x: 0.36, y: 0.36}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.15321955, y: 0.03696706}
+      - {x: 0.12832984, y: 0.040052425}
+      - {x: 0.12560913, y: 0.047423005}
+      - {x: 0.10640318, y: 0.048836716}
+      - {x: 0.10346871, y: 0.056668762}
+      - {x: 0.08378447, y: 0.05587786}
+      - {x: 0.081702076, y: 0.048612524}
+      - {x: 0.047736526, y: 0.04894649}
+      - {x: 0.04715143, y: 0.102288656}
+      - {x: 0.0555765, y: 0.10540924}
+      - {x: 0.05819782, y: 0.11245946}
+      - {x: 0.08666255, y: 0.115940906}
+      - {x: 0.08743838, y: 0.12327162}
+      - {x: 0.11552012, y: 0.12604506}
+      - {x: 0.11604501, y: 0.13436282}
+      - {x: 0.12525292, y: 0.13625339}
+      - {x: 0.12422295, y: 0.15295008}
+      - {x: 0.11668596, y: 0.15703647}
+      - {x: 0.10665268, y: 0.16681851}
+      - {x: 0.09606607, y: 0.18615407}
+      - {x: 0.08532335, y: 0.19679984}
+      - {x: 0.055184107, y: 0.20491788}
+      - {x: 0.05383298, y: 0.19608887}
+      - {x: 0.045892585, y: 0.19575858}
+      - {x: 0.035510402, y: 0.21539386}
+      - {x: 0.033996277, y: 0.2365407}
+      - {x: -0.014988245, y: 0.23639452}
+      - {x: -0.01627627, y: 0.21599789}
+      - {x: -0.025624158, y: 0.2153502}
+      - {x: -0.026665619, y: 0.19601358}
+      - {x: -0.033920463, y: 0.19523406}
+      - {x: -0.035708692, y: 0.20622845}
+      - {x: -0.06428607, y: 0.20558856}
+      - {x: -0.066001266, y: 0.1963175}
+      - {x: -0.075202525, y: 0.19556603}
+      - {x: -0.076167844, y: 0.18590921}
+      - {x: -0.086296834, y: 0.18609165}
+      - {x: -0.08603072, y: 0.1757922}
+      - {x: -0.09469306, y: 0.17460857}
+      - {x: -0.095522225, y: 0.13478293}
+      - {x: -0.085802995, y: 0.13371071}
+      - {x: -0.08484151, y: 0.1240872}
+      - {x: -0.056243274, y: 0.123728454}
+      - {x: -0.055762134, y: 0.11462379}
+      - {x: -0.036868628, y: 0.11297491}
+      - {x: -0.03616283, y: 0.046758223}
+      - {x: -0.061823983, y: 0.046607632}
+      - {x: -0.0643505, y: 0.056377497}
+      - {x: -0.09487807, y: 0.057525042}
+      - {x: -0.09737295, y: 0.04657853}
+      - {x: -0.11984196, y: 0.044945035}
+      - {x: -0.22988147, y: -0.012525097}
+      - {x: -0.27687576, y: -0.035831206}
+      - {x: -0.2745263, y: -0.11413289}
+      - {x: -0.26543146, y: -0.11520955}
+      - {x: -0.2646748, y: -0.1251933}
+      - {x: -0.25516978, y: -0.12731586}
+      - {x: -0.2514734, y: -0.13506629}
+      - {x: -0.23653303, y: -0.13380928}
+      - {x: -0.23422721, y: -0.12574607}
+      - {x: -0.19603637, y: -0.12399049}
+      - {x: -0.1942232, y: -0.11597221}
+      - {x: -0.16727796, y: -0.11425732}
+      - {x: -0.16435418, y: -0.10604354}
+      - {x: -0.13541315, y: -0.10410656}
+      - {x: -0.13469335, y: -0.09603959}
+      - {x: -0.1059564, y: -0.09398111}
+      - {x: -0.103959955, y: -0.085805506}
+      - {x: -0.07844105, y: -0.08451854}
+      - {x: -0.0749255, y: -0.07633091}
+      - {x: -0.065499574, y: -0.076497525}
+      - {x: -0.06523878, y: -0.121906094}
+      - {x: -0.055703707, y: -0.12676308}
+      - {x: -0.055617504, y: -0.17527176}
+      - {x: -0.046379607, y: -0.17602113}
+      - {x: -0.045432106, y: -0.19502008}
+      - {x: -0.03607235, y: -0.19584283}
+      - {x: -0.036662783, y: -0.21458785}
+      - {x: -0.026464568, y: -0.2158086}
+      - {x: -0.024523696, y: -0.22484386}
+      - {x: -0.016068429, y: -0.22650445}
+      - {x: -0.0138264, y: -0.23583564}
+      - {x: 0.033710994, y: -0.23441505}
+      - {x: 0.035721574, y: -0.22632803}
+      - {x: 0.043621846, y: -0.22420904}
+      - {x: 0.046231035, y: -0.21585162}
+      - {x: 0.055233244, y: -0.2134361}
+      - {x: 0.05585511, y: -0.19482078}
+      - {x: 0.06554615, y: -0.19485769}
+      - {x: 0.06515949, y: -0.15548295}
+      - {x: 0.07524035, y: -0.15449065}
+      - {x: 0.07594894, y: -0.11547342}
+      - {x: 0.08532477, y: -0.11290456}
+      - {x: 0.086775236, y: -0.08620833}
+      - {x: 0.122893654, y: -0.08704436}
+      - {x: 0.12631299, y: -0.09574176}
+      - {x: 0.1561887, y: -0.09584216}
+      - {x: 0.1550198, y: -0.103897125}
+      - {x: 0.1845501, y: -0.106223434}
+      - {x: 0.18669981, y: -0.114644125}
+      - {x: 0.21510758, y: -0.1156375}
+      - {x: 0.21591604, y: -0.123391725}
+      - {x: 0.25484613, y: -0.12598526}
+      - {x: 0.25824317, y: -0.13509388}
+      - {x: 0.2877556, y: -0.13523662}
+      - {x: 0.29, y: -0.03}
+  m_UseDelaunayMesh: 1
 --- !u!114 &-7637341464567814844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,3 +269,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Death
   deathText: {fileID: 0}
+  livesManager: {fileID: 0}
